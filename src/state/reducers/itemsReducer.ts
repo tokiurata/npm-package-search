@@ -7,8 +7,14 @@ interface ItemsState {
   data: string[];
 }
 
+const initialState = {
+  loading: false,
+  error: null,
+  data: []
+};
+
 const reducer = (
-  state: ItemsState, 
+  state: ItemsState = initialState, 
   action: Action
 ): ItemsState => {
   switch (action.type) {

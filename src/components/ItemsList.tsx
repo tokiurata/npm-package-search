@@ -13,14 +13,27 @@ const ItemsList: React.FC = () => {
     searchItems(term);
   };
 
+  const list = () => {
+    if (error) {
+      return <h3>{error}</h3>;
+    } else if (loading) {
+      return <h3>Loading...</h3>;
+    } else if (!error && !loading && data.length === 0) {
+      return <h3>No results</h3>;
+    } else if (!error && !loading && data.length > 0) {
+      return data.map((item, index) => <div key={index}>{item}</div>);
+    }
+  };
+
   return (
     <div>
       <form onSubmit={onSubmit}>
         <input value={term} onChange={e => setTerm(e.target.value)} />
         <button>Search</button>
       </form>
+      {list()}
     </div>
-  )
+  );
 };
 
 export default ItemsList;

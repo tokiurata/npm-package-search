@@ -2,11 +2,14 @@ import { Provider } from 'react-redux';
 import { store } from '../state';
 import ItemsList from './ItemsList';
 
+import '../styles/main.scss';
+
 const App = () => {
   return (
     <Provider store={store}>
-      <div>
-        <h1>Search For a Package</h1>
+      <div className='app'>
+        <h1>npm Package Search</h1>
+
         <ItemsList />
       </div>
     </Provider>

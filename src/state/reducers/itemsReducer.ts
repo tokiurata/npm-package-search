@@ -4,14 +4,26 @@ interface ItemsState {
   data: string[];
 }
 
-interface Action {
-  type: string;
-  payload?: any;
+interface SearchItemsAction {
+  type: 'search_items';
+}
+
+interface SearchItemsSuccessAction {
+  type: 'search_items_success';
+  payload: string[];
+}
+
+interface SearchItemsErrorAction {
+  type: 'search_items_error';
+  payload: string;
 }
 
 const reducer = (
   state: ItemsState, 
-  action: Action
+  action: 
+    | SearchItemsAction 
+    | SearchItemsSuccessAction 
+    | SearchItemsErrorAction
 ): ItemsState => {
   switch (action.type) {
     case 'search_items':

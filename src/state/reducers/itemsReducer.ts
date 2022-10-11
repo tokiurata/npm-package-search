@@ -5,32 +5,40 @@ interface ItemsState {
 }
 
 interface SearchItemsAction {
-  type: 'search_items';
+  type: ActionType.SEARCH_ITEMS;
 }
 
 interface SearchItemsSuccessAction {
-  type: 'search_items_success';
+  type: ActionType.SEARCH_ITEMS_SUCCESS;
   payload: string[];
 }
 
 interface SearchItemsErrorAction {
-  type: 'search_items_error';
+  type: ActionType.SEARCH_ITEMS_ERROR;
   payload: string;
+}
+
+type Action =
+  | SearchItemsAction 
+  | SearchItemsSuccessAction 
+  | SearchItemsErrorAction;
+
+enum ActionType {
+  SEARCH_ITEMS = 'search_items',
+  SEARCH_ITEMS_SUCCESS = 'search_items_success',
+  SEARCH_ITEMS_ERROR = 'search_items_error'
 }
 
 const reducer = (
   state: ItemsState, 
-  action: 
-    | SearchItemsAction 
-    | SearchItemsSuccessAction 
-    | SearchItemsErrorAction
+  action: Action
 ): ItemsState => {
   switch (action.type) {
-    case 'search_items':
+    case ActionType.SEARCH_ITEMS:
       return { loading: true, error: null, data: [] };
-    case 'search_items_success':
+    case ActionType.SEARCH_ITEMS_SUCCESS:
       return { loading: false, error: null, data: action.payload };
-    case 'search_items_error':
+    case ActionType.SEARCH_ITEMS_ERROR:
       return { loading: false, error: action.payload, data: [] };
     default:
       return state;

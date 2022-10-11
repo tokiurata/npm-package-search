@@ -1,32 +1,10 @@
+import { ActionType } from '../action-types';
+import { Action } from '../actions';
+
 interface ItemsState {
   loading: boolean;
   error: string | null;
   data: string[];
-}
-
-interface SearchItemsAction {
-  type: ActionType.SEARCH_ITEMS;
-}
-
-interface SearchItemsSuccessAction {
-  type: ActionType.SEARCH_ITEMS_SUCCESS;
-  payload: string[];
-}
-
-interface SearchItemsErrorAction {
-  type: ActionType.SEARCH_ITEMS_ERROR;
-  payload: string;
-}
-
-type Action =
-  | SearchItemsAction 
-  | SearchItemsSuccessAction 
-  | SearchItemsErrorAction;
-
-enum ActionType {
-  SEARCH_ITEMS = 'search_items',
-  SEARCH_ITEMS_SUCCESS = 'search_items_success',
-  SEARCH_ITEMS_ERROR = 'search_items_error'
 }
 
 const reducer = (

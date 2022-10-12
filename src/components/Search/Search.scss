@@ -1,0 +1,47 @@
+@use "../../styles/partials/colors" as *;
+
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8rem;
+
+  &__form {
+    flex-basis: 600px;
+    display: flex;
+  }
+
+  &__input {
+    font-family: "Fira Mono", monospace;
+    letter-spacing: 1px;
+    width: 100%;
+    padding: 1em 3em;
+    border-radius: 0;
+    border: 1px solid $color-background;
+    background-color: $color-background;
+    background-image: url(../../assets/icons/search-line.svg);
+    background-repeat: no-repeat;
+    background-size: 1.2rem;
+    background-position: 12px 45%;
+    outline: none;
+
+    &::placeholder {
+      color: #939693;
+    }
+
+    &:focus,
+    &:active {
+      border: 1px solid $color-3;
+    }
+  }
+
+  &__button {
+    font-size: .9rem;
+    font-weight: 600;
+    color: $color-1;
+    background-color: $color-primary-dark;
+    border: 1px solid $color-primary-dark;
+    border: none;
+    padding: 1em 2em;
+  }
+}

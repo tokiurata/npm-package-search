@@ -1,6 +1,7 @@
-
 import { useState } from "react";
 import { useActions } from "../../hooks/useActions";
+
+import "./Search.scss";
 
 const Search: React.FC = () => {
   const [term, setTerm] = useState('');
@@ -14,9 +15,14 @@ const Search: React.FC = () => {
 
   return (
     <div className="search">
-      <form onSubmit={onSubmit}>
-        <input value={term} onChange={e => setTerm(e.target.value)} />
-        <button>Search</button>
+      <form className="search__form" onSubmit={onSubmit}>
+        <input 
+          className="search__input" 
+          placeholder="Search packages"
+          value={term} 
+          onChange={e => setTerm(e.target.value)} 
+        />
+        <button className="search__button">Search</button>
       </form>
     </div>
   );

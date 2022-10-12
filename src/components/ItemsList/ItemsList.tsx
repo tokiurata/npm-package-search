@@ -1,5 +1,7 @@
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 
+import "./ItemsList.scss"
+
 const ItemsList: React.FC = () => {
   const { data, error, loading } = useTypedSelector((state) => state.items);
 
@@ -7,20 +9,20 @@ const ItemsList: React.FC = () => {
     if (error) {
       console.error(error);
     } else if (loading) {
-      return <h3>Loading...</h3>;
+      console.log("Loading...");
     } else if (data.length > 0) {
       return data.map((item, index) => {
         return (
-          <li key={index}>{item}</li>
+          <li className="items-list__item" key={index}>{item}</li>
         )
       });
     }
   };
 
   return (
-    <div className="items-list">
+    <ul className="items-list">
       {list()}
-    </div>
+    </ul>
   );
 };
 

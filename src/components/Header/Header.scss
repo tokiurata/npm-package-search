@@ -1,0 +1,12 @@
+@use "../../styles/partials/colors" as *;
+
+.header {
+
+  &__link {
+    
+  }
+  
+  &__title {
+    margin: .5rem 1rem;
+  }
+}

@@ -1,6 +1,6 @@
 import { Provider } from 'react-redux';
 import { store } from '../state';
-import ItemsList from './ItemsList';
+import ItemsList from './ItemsList/ItemsList';
 
 import '../styles/main.scss';
 

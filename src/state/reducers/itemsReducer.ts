@@ -4,7 +4,7 @@ import { Action } from '../actions';
 interface ItemsState {
   loading: boolean;
   error: string | null;
-  data: string[];
+  data: any;
 }
 
 const initialState = {

@@ -6,7 +6,7 @@ interface SearchItemsAction {
 
 interface SearchItemsSuccessAction {
   type: ActionType.SEARCH_ITEMS_SUCCESS;
-  payload: string[];
+  payload: any;
 }
 
 interface SearchItemsErrorAction {

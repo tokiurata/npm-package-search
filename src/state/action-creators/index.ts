@@ -14,12 +14,9 @@ export const searchItems = (term: string) => {
           text: term
         }
       });
-      const items = data.objects.map((item: any) => {
-        return item.package.name;
-      });
       dispatch({
         type: ActionType.SEARCH_ITEMS_SUCCESS,
-        payload: items
+        payload: data
       });
     } catch (err) {
       if (err instanceof Error) {

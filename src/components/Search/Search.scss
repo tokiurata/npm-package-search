@@ -4,10 +4,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 8rem;
+  margin-top: 3rem;
+  margin-bottom: 2.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 
   &__form {
-    flex-basis: 600px;
+    flex-basis: 800px;
     display: flex;
   }
 
@@ -15,7 +18,7 @@
     font-family: "Fira Mono", monospace;
     letter-spacing: 1px;
     width: 100%;
-    padding: 1em 3em;
+    padding: 1.2em 3.1em;
     border-radius: 0;
     border: 1px solid $color-background;
     background-color: $color-background;

@@ -19,8 +19,19 @@ body {
   font-family: $font-stack;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+}
+
 h1 {
-  font-size: 1.4rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
 ul {

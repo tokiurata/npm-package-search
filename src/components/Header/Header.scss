@@ -1,12 +1,14 @@
 @use "../../styles/partials/colors" as *;
 
 .header {
+  border-bottom: 1px solid $color-background;
 
   &__link {
     
   }
   
   &__title {
-    margin: .5rem 1rem;
+    margin: 1rem 1.5rem;
+    text-align: right;
   }
 }

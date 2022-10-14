@@ -21,10 +21,10 @@ const ItemsList: React.FC = () => {
       {data.objects && data.objects.map((item: any, index: number) => {
         return (
           <li className="items-list__item" key={index}>
-            <a href={item.package.links.npm}>
-              <h2>{item.package.name}</h2>
+            <a className="items-list__link" href={item.package.links.npm}>
+              <h2 className="items-list__title">{item.package.name}</h2>
             </a>
-            <p>{item.package.description}</p>
+            <p className="items-list__description">{item.package.description}</p>
           </li>
         );
       })}

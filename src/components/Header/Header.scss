@@ -1,14 +1,18 @@
 @use "../../styles/partials/colors" as *;
 
 .header {
-  border-bottom: 1px solid $color-background;
-
-  &__link {
-    
-  }
+  border-top-width: 10px;
+  border-top-style: solid;
+  border-color: #ff4b01;
+  -o-border-image: linear-gradient(139deg, #fb8817, #ff4b01, #c12127, #e02aff) 3;
+  border-image: linear-gradient(139deg, #fb8817, #ff4b01, #c12127, #e02aff) 3;
   
   &__title {
     margin: 1rem 1.5rem;
     text-align: right;
+  }
+
+  &__bottom {
+    border-bottom: 1px solid $color-background;
   }
 }

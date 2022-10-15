@@ -43,6 +43,10 @@ a {
   text-decoration: none;
 }
 
+button {
+  cursor: pointer;
+}
+
 .app {
   display: flex;
   flex-direction: column;

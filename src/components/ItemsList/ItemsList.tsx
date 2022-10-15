@@ -18,13 +18,18 @@ const ItemsList: React.FC = () => {
 
   return (
     <ul className="items-list">
-      {data.objects && data.objects.map((item: any, index: number) => {
+      {data.objects?.map((item: any, index: number) => {
         return (
           <li className="items-list__item" key={index}>
             <a className="items-list__link" href={item.package.links.npm}>
               <h2 className="items-list__title">{item.package.name}</h2>
             </a>
             <p className="items-list__description">{item.package.description}</p>
+            <ul className="items-list__keyword-list">
+              {item.package.keywords?.map((keyword: string, index: number) => {
+                return <li className="items-list__keyword" key={index}>{keyword}</li>;
+              })}
+            </ul>
           </li>
         );
       })}

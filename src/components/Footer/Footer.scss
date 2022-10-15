@@ -1,3 +1,5 @@
+@use "../../styles/partials/mixins" as *;
+
 .footer {
   margin-top: auto;
   width: 100%;
@@ -5,7 +7,5 @@
   flex-shrink: 0;
   border-bottom-width: 10px;
   border-bottom-style: solid;
-  border-color: #ff4b01;
-  -o-border-image: linear-gradient(139deg, #fb8817, #ff4b01, #c12127, #e02aff) 3;
-  border-image: linear-gradient(139deg, #fb8817, #ff4b01, #c12127, #e02aff) 3;
+  @include border-gradient;
 }
